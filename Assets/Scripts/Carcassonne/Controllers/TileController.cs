@@ -54,8 +54,7 @@ namespace Carcassonne.Controllers
         /// </summary>
         public override bool Draw()
         {
-            // TODO Should this check phase validity??? Probably, right?
-            Debug.Log("Drawing new Tile.");
+            Debug.Log("'Draw Tile' button pressed.");
             // Debug.Assert(state.Tiles.Remaining.Count > 0, "TileController: The stack is empty.");
             
             // This can happen if Draw is called twice because of a Discard, for example.
@@ -63,7 +62,7 @@ namespace Carcassonne.Controllers
                 GetComponent<GameController>().GameOver();
                 return false;
             }
-
+            
             if (state.phase != Phase.NewTurn)
             {
                 Debug.Log($"Tried to draw a tile during phase {state.phase}. Tiles may only be drawn during Phase.NewTurn.");
