@@ -29911,32 +29911,32 @@ PrefabInstance:
     - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
         type: 3}
       propertyPath: pressDistance
-      value: 0.005
+      value: -0.007
       objectReference: {fileID: 0}
     - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
         type: 3}
       propertyPath: maxPushDistance
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
-        type: 3}
-      propertyPath: startPushDistance
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
         type: 3}
+      propertyPath: startPushDistance
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
+        type: 3}
       propertyPath: releaseDistanceDelta
-      value: 0.003
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
         type: 3}
       propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
         type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717325903072353550, guid: 57e46130eb59dfc4d9da26d1308a46d0,
         type: 3}
@@ -31068,12 +31068,12 @@ PrefabInstance:
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
       propertyPath: pressDistance
-      value: 0.005
+      value: -0.007
       objectReference: {fileID: 0}
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
       propertyPath: maxPushDistance
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
@@ -31083,7 +31083,7 @@ PrefabInstance:
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
       propertyPath: startPushDistance
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
@@ -31093,7 +31093,7 @@ PrefabInstance:
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
       propertyPath: releaseDistanceDelta
-      value: 0.003
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
@@ -31103,12 +31103,12 @@ PrefabInstance:
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
       propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5285392071487424252, guid: 9b3c48cc621b20d49a57b0ca8ede048c,
         type: 3}
