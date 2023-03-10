@@ -13,6 +13,11 @@ namespace Carcassonne.Controllers
         private GameState state => GetComponent<GameState>();
         private Meeple meeple => state.Meeples.Current;
 
+        public int getMeepleCount()
+        {
+            return RemainingForCurrentPlayer.Count();
+        }
+
         public GridMapper grid => GetComponent<GridMapper>();
         
         // #region Events
@@ -29,7 +34,7 @@ namespace Carcassonne.Controllers
         #region Convenience Properties
         private MeepleState meeples => state.Meeples;
         #endregion
-        
+
         public void Free(Meeple meeple)
         {
             // If this is a meeple that has already been played on a tile (as opposed to one that is being placed).
@@ -257,6 +262,9 @@ namespace Carcassonne.Controllers
             state.phase = Phase.MeepleDrawn;
             
             OnDraw.Invoke(meeple);
+
+            //MeepleCountScript.UpdateMeepleCount(RemainingForCurrentPlayer);
+
             return true;
         }
 
