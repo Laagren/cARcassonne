@@ -13,6 +13,8 @@ namespace Carcassonne.Controllers
         private GameState state => GetComponent<GameState>();
         private Meeple meeple => state.Meeples.Current;
 
+        //[SerializeField] private MeepleCountScript meepleCountScript;
+
         public int getMeepleCount()
         {
             return RemainingForCurrentPlayer.Count();
@@ -247,7 +249,7 @@ namespace Carcassonne.Controllers
             
             Debug.Log("Drawing new Meeple.");
             // Can't draw if a meeple is in play or a player has none left.
-            if (RemainingForCurrentPlayer.Count() < 1 || state.Meeples.Current != null)
+            if (RemainingForCurrentPlayer.Count() < 1 || state.Meeples.Current != null) // ++++++++++++++++++++++++++++++ ADD HERE KEVIN ++++++++++++++++++++++++++++++++++
             {
                 Debug.LogWarning($"Can't draw meeple. Too few remaining ({RemainingForCurrentPlayer.Count()}) or Meeple already drawn.");
                 OnInvalidDraw.Invoke();

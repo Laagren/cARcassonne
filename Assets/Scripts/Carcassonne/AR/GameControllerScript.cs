@@ -63,6 +63,7 @@ namespace Carcassonne.AR
 
                 AssignScoreboards(players);
                 PlaceStartingTile();
+                
 
                 Debug.Assert(players.Count > 0, "Oops, there are no players.");
                 Debug.Assert(state.Players.Current != null,
