@@ -129,7 +129,7 @@ namespace Carcassonne.AR
                     
                     // Connect to events
                     gameController.OnGameStart.AddListener(scoreboard.OnGameStart);
-                    gameController.OnTurnEnd.AddListener(scoreboard.ChangeMaterial);
+                    gameController.OnTurnEnd.AddListener(scoreboard.ChangeMaterial); //ADD THIS KIND OF LISTENER IN THE MEEPLE COUNT SCRIPT
                     gameController.OnTurnStart.AddListener(scoreboard.UpdateCurrentPlayer);
                     gameController.OnGameOver.AddListener(scoreboard.ChangeMaterial);
                     gameController.OnScoreChanged.AddListener(scoreboard.UpdateScore);
