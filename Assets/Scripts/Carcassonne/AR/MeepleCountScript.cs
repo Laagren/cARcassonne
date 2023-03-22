@@ -13,22 +13,17 @@ namespace Carcassonne.Players
 {
     public class MeepleCountScript : MonoBehaviourPun
     {
-        public GameState state;
-        public GameControllerScript controller;
-        public MeepleController meepleController => GetComponent<MeepleController>();
+        public MeepleController meepleController;
 
         private TextMeshPro meepleCountText => transform.GetComponentsInChildren<TextMeshPro>()[1];
 
         private void Start()
         {
-            state = FindObjectOfType<GameState>();
-            controller = state.GetComponent<GameControllerScript>();
+            meepleController = GetComponent<MeepleController>();
         }
 
         public void UpdateMeepleCount()
         {
-            Debug.Assert(state != null, "State is null");
-
             Debug.Log($"Meeple Count Board updated");
             meepleCountText.text = "" + meepleController.getMeepleCount();
         }

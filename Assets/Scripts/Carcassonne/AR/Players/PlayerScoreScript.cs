@@ -17,6 +17,7 @@ namespace Carcassonne.Players
         public Materials materials;
         public GameState state;
         public GameControllerScript controller;
+        public MeepleCountScript meepleCountScript; //Kevin
 
         public int[] materialIndex = {0, 1, 2, 3};
 
@@ -31,6 +32,7 @@ namespace Carcassonne.Players
         {
             state = FindObjectOfType<GameState>();
             controller = state.GetComponent<GameControllerScript>();
+            meepleCountScript = GetComponent<MeepleCountScript>(); //Kevin. THIS DOES NOT WORK: IT IS NULL
         }
 
         public void UpdateScore()
@@ -57,6 +59,21 @@ namespace Carcassonne.Players
         {
             var playerIndex = state.Players.All.IndexOf(state.Players.Current);
             GetComponentInChildren<MeshRenderer>().material = materials.playerMaterials[materialIndex[playerIndex]];
+
+            UpdateMeepleCount(); //Kevin. Adding to another listener since my own did not work.
+        }
+
+        public void UpdateMeepleCount()
+        {
+            if(meepleCountScript != null)
+            {
+                meepleCountScript.UpdateMeepleCount();
+            }
+            else
+            {
+                Debug.Log("MeepleCountScript is NULL");
+            }
+
         }
 
         public void SetLocal()
