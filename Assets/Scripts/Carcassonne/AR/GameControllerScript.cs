@@ -32,7 +32,6 @@ namespace Carcassonne.AR
         public MeepleController meepleController => GetComponent<MeepleController>();
         public TileController tileController => GetComponent<TileController>();
         public TurnController turnController => GetComponent<TurnController>();
-        public MeepleCountScript meepleCountScript => GetComponent<MeepleCountScript>(); //Kevin
 
         internal TileControllerScript tileControllerScript => GetComponent<TileControllerScript>();
         internal MeepleControllerScript meepleControllerScript => GetComponent<MeepleControllerScript>();
@@ -130,12 +129,10 @@ namespace Carcassonne.AR
                     
                     // Connect to events
                     gameController.OnGameStart.AddListener(scoreboard.OnGameStart);
-                    gameController.OnTurnEnd.AddListener(scoreboard.ChangeMaterial); 
-                    gameController.OnTurnEnd.AddListener(meepleCountScript.UpdateMeepleCount); // ++++++++ Kevin ++++++++
+                    gameController.OnTurnEnd.AddListener(scoreboard.ChangeMaterial); //ADD THIS KIND OF LISTENER IN THE MEEPLE COUNT SCRIPT
                     gameController.OnTurnStart.AddListener(scoreboard.UpdateCurrentPlayer);
                     gameController.OnGameOver.AddListener(scoreboard.ChangeMaterial);
                     gameController.OnScoreChanged.AddListener(scoreboard.UpdateScore);
-                    
                     
                     scoreboard.OnGameStart();
                     scoreboard.UpdateCurrentPlayer();

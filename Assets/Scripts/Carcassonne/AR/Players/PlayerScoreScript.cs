@@ -23,8 +23,6 @@ namespace Carcassonne.Players
         private TextMeshPro scoreText => transform.GetComponentsInChildren<TextMeshPro>()[0];
         private TextMeshPro playerText => transform.GetComponentsInChildren<TextMeshPro>()[1];
 
-        private TextMeshPro meepleCountText => transform.GetComponent<TextMeshPro>();
-
         public Player player;
 
         private bool m_IsLocal;
