@@ -15,7 +15,7 @@ namespace Carcassonne.Players
     {
         public GameState state;
         public GameControllerScript controller;
-        public MeepleController meepleController;
+        public MeepleController meepleController => GetComponent<MeepleController>();
 
         private TextMeshPro meepleCountText => transform.GetComponentsInChildren<TextMeshPro>()[1];
 

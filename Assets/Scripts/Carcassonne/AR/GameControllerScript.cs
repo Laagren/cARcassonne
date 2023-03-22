@@ -32,6 +32,7 @@ namespace Carcassonne.AR
         public MeepleController meepleController => GetComponent<MeepleController>();
         public TileController tileController => GetComponent<TileController>();
         public TurnController turnController => GetComponent<TurnController>();
+        public MeepleCountScript meepleCountScript => GetComponent<MeepleCountScript>(); //Kevin
 
         internal TileControllerScript tileControllerScript => GetComponent<TileControllerScript>();
         internal MeepleControllerScript meepleControllerScript => GetComponent<MeepleControllerScript>();
@@ -63,6 +64,8 @@ namespace Carcassonne.AR
 
                 AssignScoreboards(players);
                 PlaceStartingTile();
+
+                gameController.OnTurnEnd.AddListener(meepleCountScript.UpdateMeepleCount); //Kevin
                 
 
                 Debug.Assert(players.Count > 0, "Oops, there are no players.");
