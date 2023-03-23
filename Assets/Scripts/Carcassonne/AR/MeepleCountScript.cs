@@ -20,7 +20,6 @@ namespace Carcassonne.Players
 
         private void Start()
         {
-            
             meepleController = baseGameController.GetComponent<MeepleController>();
         }
 

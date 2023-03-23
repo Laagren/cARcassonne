@@ -19,6 +19,11 @@ namespace Carcassonne.Controllers
         private TileState tiles => state.Tiles;
         private Tile tile => state.Tiles.Current;
 
+        public int getTileCount()
+        {
+            return state.Tiles.Remaining.Count;
+        }
+
         /// <summary>
         /// Position of the current tile in board coordinates.
         /// </summary>
@@ -36,7 +41,7 @@ namespace Carcassonne.Controllers
         // public new UnityEvent<Tile, Vector2Int> OnPlace = new UnityEvent<Tile, Vector2Int>();
         //
         // #endregion
-        
+
         #region UpdatedFunctions
 
         private void Awake()

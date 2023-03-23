@@ -17,7 +17,8 @@ namespace Carcassonne.Players
         public Materials materials;
         public GameState state;
         public GameControllerScript controller;
-        public MeepleCountScript meepleCountScript; //Kevin
+        public MeepleCountScript meepleCountScript; //Kevin. Hardcoded to be assigned in inspector.
+        public TileCountScript tileCountScript; //Kevin. Hardcoded to be assigned in inspector.
 
         public int[] materialIndex = {0, 1, 2, 3};
 
@@ -32,7 +33,7 @@ namespace Carcassonne.Players
         {
             state = FindObjectOfType<GameState>();
             controller = state.GetComponent<GameControllerScript>();
-            //meepleCountScript = GetComponent<MeepleCountScript>(); //Kevin. THIS DOES NOT WORK: IT IS NULL
+            //meepleCountScript = GetComponent<MeepleCountScript>(); //Kevin. THIS DOES NOT WORK: IT IS NULL. Find better solution.
         }
 
         public void UpdateScore()
@@ -60,10 +61,11 @@ namespace Carcassonne.Players
             var playerIndex = state.Players.All.IndexOf(state.Players.Current);
             GetComponentInChildren<MeshRenderer>().material = materials.playerMaterials[materialIndex[playerIndex]];
 
-            UpdateMeepleCount(); //Kevin. Adding to another listener since my own did not work.
+            UpdateMeepleCount(); //Kevin. Adding 2 other listener functions here since my own did not work.
+            UpdateTileCount();
         }
 
-        public void UpdateMeepleCount()
+        private void UpdateMeepleCount()
         {
             if(meepleCountScript != null)
             {
@@ -74,6 +76,18 @@ namespace Carcassonne.Players
                 Debug.Log("MeepleCountScript is NULL");
             }
 
+        }
+
+        private void UpdateTileCount()
+        {
+            if(tileCountScript != null)
+            {
+                tileCountScript.UpdateTileCount();
+            }
+            else
+            {
+                Debug.Log("TileCountScript is NULL");
+            }
         }
 
         public void SetLocal()
