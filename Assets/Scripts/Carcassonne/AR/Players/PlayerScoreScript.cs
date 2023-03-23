@@ -32,7 +32,7 @@ namespace Carcassonne.Players
         {
             state = FindObjectOfType<GameState>();
             controller = state.GetComponent<GameControllerScript>();
-            meepleCountScript = GetComponent<MeepleCountScript>(); //Kevin. THIS DOES NOT WORK: IT IS NULL
+            //meepleCountScript = GetComponent<MeepleCountScript>(); //Kevin. THIS DOES NOT WORK: IT IS NULL
         }
 
         public void UpdateScore()

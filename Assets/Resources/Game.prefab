@@ -534,6 +534,7 @@ MonoBehaviour:
   materials: {fileID: 11400000, guid: 8c10690857f4c49dfb82c27fccb7d9f1, type: 2}
   state: {fileID: 0}
   controller: {fileID: 0}
+  meepleCountScript: {fileID: 7154575420223646427}
   materialIndex: 00000000040000000400000004000000
   player: {fileID: 0}
 --- !u!1 &1060827976533155264
@@ -1497,6 +1498,7 @@ MonoBehaviour:
   materials: {fileID: 11400000, guid: 8c10690857f4c49dfb82c27fccb7d9f1, type: 2}
   state: {fileID: 0}
   controller: {fileID: 0}
+  meepleCountScript: {fileID: 7154575420223646427}
   materialIndex: 05000000010000000500000005000000
   player: {fileID: 0}
 --- !u!1 &1060827977084583221
@@ -1833,6 +1835,7 @@ MonoBehaviour:
   materials: {fileID: 11400000, guid: 8c10690857f4c49dfb82c27fccb7d9f1, type: 2}
   state: {fileID: 0}
   controller: {fileID: 0}
+  meepleCountScript: {fileID: 7154575420223646427}
   materialIndex: 07000000070000000700000003000000
   player: {fileID: 0}
 --- !u!1 &1060827977147192722
@@ -3582,6 +3585,7 @@ MonoBehaviour:
   materials: {fileID: 11400000, guid: 8c10690857f4c49dfb82c27fccb7d9f1, type: 2}
   state: {fileID: 0}
   controller: {fileID: 0}
+  meepleCountScript: {fileID: 7154575420223646427}
   materialIndex: 06000000060000000200000006000000
   player: {fileID: 0}
 --- !u!1 &1060827977856062115
@@ -24385,8 +24389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4d6fbf4276c5e45affb98cb9509d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 0}
-  controller: {fileID: 0}
+  baseGameController: {fileID: 1060827977317108017}
   meepleController: {fileID: 0}
 --- !u!1 &9209369800816846270
 GameObject:

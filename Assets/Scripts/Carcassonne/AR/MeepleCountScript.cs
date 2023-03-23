@@ -13,13 +13,15 @@ namespace Carcassonne.Players
 {
     public class MeepleCountScript : MonoBehaviourPun
     {
+        public GameObject baseGameController;
         public MeepleController meepleController;
 
-        private TextMeshPro meepleCountText => transform.GetComponentsInChildren<TextMeshPro>()[1];
+        [SerializeField] private TextMeshPro meepleCountText => transform.GetComponentsInChildren<TextMeshPro>()[1];
 
         private void Start()
         {
-            meepleController = GetComponent<MeepleController>();
+            
+            meepleController = baseGameController.GetComponent<MeepleController>();
         }
 
         public void UpdateMeepleCount()
