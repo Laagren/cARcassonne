@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1302393884334798665
 Transform:
   m_ObjectHideFlags: 0
@@ -2071,6 +2071,11 @@ PrefabInstance:
       propertyPath: constraintsManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5432377988094254068, guid: 5cea51629c3f54fa594f0f7ce4050181,
+        type: 3}
+      propertyPath: tutorial
+      value: 
+      objectReference: {fileID: 2130759563458012176}
     - target: {fileID: 7427561245562928099, guid: 5cea51629c3f54fa594f0f7ce4050181,
         type: 3}
       propertyPath: m_Mesh
