@@ -9,6 +9,7 @@ TagManager:
   - Meeple 0
   - Meeple 1
   - Meeple
+  - HowToPlay
   layers:
   - Default
   - TransparentFX
