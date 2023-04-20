@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7678761271104957235}
   - component: {fileID: 8960748228227188823}
   - component: {fileID: 4993873808045326428}
+  - component: {fileID: 2761488042368775239}
   m_Layer: 0
   m_Name: HowToPlayObject
   m_TagString: Untagged
@@ -298,6 +299,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTetherWhenManipulating: 0
   IsBoundsHandles: 0
+--- !u!114 &2761488042368775239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130759563458012176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3e6359c9750ad4fb8a05c9b8704d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 3
+  proximityType: 3
+  constraintOnRotation: 4
+  useLocalSpaceForConstraint: 0
 --- !u!1 &3787368232004144783
 GameObject:
   m_ObjectHideFlags: 0
