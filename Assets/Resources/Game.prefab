@@ -32014,6 +32014,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8289305075696517317, guid: 46998f644fc46024b9e5f496bb66bfd9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289305075696517317, guid: 46998f644fc46024b9e5f496bb66bfd9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289305075696517317, guid: 46998f644fc46024b9e5f496bb66bfd9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.025
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3894108795941771037, guid: 46998f644fc46024b9e5f496bb66bfd9, type: 3}
     - {fileID: 3894108795941771054, guid: 46998f644fc46024b9e5f496bb66bfd9, type: 3}

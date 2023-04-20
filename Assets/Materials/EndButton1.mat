@@ -2,15 +2,21 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EndButton1
   m_Shader: {fileID: 4800000, guid: 5bdea20278144b11916d77503ba1467a, type: 3}
-  m_ShaderKeywords: _BORDER_LIGHT _BORDER_LIGHT_REPLACES_ALBEDO _DISABLE_ALBEDO_MAP
-    _INDEPENDENT_CORNERS _IRIDESCENCE _ROUND_CORNERS
+  m_ValidKeywords:
+  - _BORDER_LIGHT
+  - _BORDER_LIGHT_REPLACES_ALBEDO
+  - _DISABLE_ALBEDO_MAP
+  - _INDEPENDENT_CORNERS
+  - _IRIDESCENCE
+  - _ROUND_CORNERS
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -73,6 +79,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlbedoAlphaMode: 0
     - _AlbedoAlphaSmoothness: 0
@@ -112,6 +119,7 @@ Material:
     - _EnableLocalSpaceTriplanarMapping: 0
     - _EnableNormalMap: 0
     - _EnableProximityLightColorOverride: 0
+    - _EnableSSAA: 0
     - _EnableTriplanarMapping: 0
     - _EnvironmentColorIntensity: 0.5
     - _EnvironmentColorThreshold: 1.5
@@ -135,6 +143,7 @@ Material:
     - _IridescenceIntensity: 0
     - _IridescenceThreshold: 0.05
     - _Metallic: 0
+    - _MipmapBias: -2
     - _Mode: 0
     - _NearLightFade: 0
     - _NearPlaneFade: 0
@@ -176,7 +185,7 @@ Material:
     - _ClipPlane: {r: 0, g: 1, b: 0, a: 0}
     - _ClippingBorderColor: {r: 1, g: 0.2, b: 0, a: 1}
     - _ClippingPlaneBorderColor: {r: 1, g: 0.2, b: 0, a: 1}
-    - _Color: {r: 0.9056604, g: 0.23495908, b: 0.23495908, a: 1}
+    - _Color: {r: 0.6627451, g: 0.6627451, b: 0.6627451, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EnvironmentColorX: {r: 1, g: 0, b: 0, a: 1}
@@ -191,3 +200,4 @@ Material:
     - _ProximityLightOuterColorOverride: {r: 0, g: 0, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.497}
     - _RoundCornersRadius: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+  m_BuildTextureStacks: []
