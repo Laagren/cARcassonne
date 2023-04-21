@@ -10,7 +10,10 @@ public class HowToPlay : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        tutorial.SetActive(false);
+        if (!tutorial.activeInHierarchy)
+        {
+            tutorial.SetActive(false);
+        }
     }
 
     // Update is called once per frame
