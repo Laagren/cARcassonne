@@ -1047,7 +1047,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.092, y: 0.032, z: 0.016}
+  m_Size: {x: 0.091, y: 0.033, z: 0.016}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &5144843564594453741
 AudioSource:
@@ -1351,7 +1351,7 @@ MonoBehaviour:
   localForward: {x: 0, y: 0, z: -1}
   localUp: {x: 0, y: 1, z: 0}
   localCenter: {x: 0, y: 0, z: -0.008}
-  bounds: {x: 0.032, y: 0.032}
+  bounds: {x: 0.091, y: 0.033}
   touchableCollider: {fileID: 8665226518382973750}
 --- !u!114 &3480330958971785281
 MonoBehaviour:
@@ -2446,7 +2446,7 @@ MonoBehaviour:
   localForward: {x: 0, y: 0, z: -1}
   localUp: {x: 0, y: 1, z: 0}
   localCenter: {x: 0, y: 0, z: -0.008}
-  bounds: {x: 0.032, y: 0.032}
+  bounds: {x: 0.09, y: 0.08}
   touchableCollider: {fileID: 5921600844712301306}
 --- !u!114 &2674409268581879262
 MonoBehaviour:
@@ -2859,7 +2859,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.092, y: 0.032, z: 0.016}
+  m_Size: {x: 0.091, y: 0.033, z: 0.016}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4298238138673923766
 MonoBehaviour:
@@ -3304,7 +3304,7 @@ MonoBehaviour:
   localForward: {x: 0, y: 0, z: -1}
   localUp: {x: 0, y: 1, z: 0}
   localCenter: {x: 0, y: 0, z: -0.008}
-  bounds: {x: 0.032, y: 0.032}
+  bounds: {x: 0.091, y: 0.033}
   touchableCollider: {fileID: 4146445741279035192}
 --- !u!114 &6033018572424385821
 MonoBehaviour:
@@ -5534,6 +5534,16 @@ PrefabInstance:
       propertyPath: HowToPlayButton
       value: 
       objectReference: {fileID: 4146445741279035172}
+    - target: {fileID: 2623676721051423046, guid: fe07e4e4615af8c41b6a340281500012,
+        type: 3}
+      propertyPath: bounds.x
+      value: 0.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623676721051423046, guid: fe07e4e4615af8c41b6a340281500012,
+        type: 3}
+      propertyPath: bounds.y
+      value: 0.033
+      objectReference: {fileID: 0}
     - target: {fileID: 4059034555795982830, guid: fe07e4e4615af8c41b6a340281500012,
         type: 3}
       propertyPath: m_Name
@@ -5542,7 +5552,12 @@ PrefabInstance:
     - target: {fileID: 4059034555795982834, guid: fe07e4e4615af8c41b6a340281500012,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.092
+      value: 0.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059034555795982834, guid: fe07e4e4615af8c41b6a340281500012,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.033
       objectReference: {fileID: 0}
     - target: {fileID: 4059034556316602127, guid: fe07e4e4615af8c41b6a340281500012,
         type: 3}
