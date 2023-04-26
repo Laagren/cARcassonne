@@ -22,9 +22,15 @@ public class HowToPlay : MonoBehaviourPun
         
     }
 
+    IEnumerator toggler()
+    {
+        yield return new WaitForSeconds(0.2f);
+        tutorial.SetActive(!tutorial.activeInHierarchy);
+    }
+
     //Called when how to play button is pressed.
     public void ToggleTutorial()
     {
-        tutorial.SetActive(!tutorial.activeInHierarchy);
+        StartCoroutine(toggler());
     }
 }
