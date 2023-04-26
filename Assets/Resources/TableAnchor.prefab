@@ -4679,7 +4679,7 @@ GameObject:
   - component: {fileID: 3964245968201289357}
   - component: {fileID: 959169881630145956}
   - component: {fileID: 8082874657359784936}
-  - component: {fileID: 1236458354084089676}
+  - component: {fileID: 544338167370864602}
   m_Layer: 0
   m_Name: Preview
   m_TagString: Untagged
@@ -4855,7 +4855,7 @@ MonoBehaviour:
   proximityType: 3
   constraintOnRotation: -1
   useLocalSpaceForConstraint: 0
---- !u!114 &1236458354084089676
+--- !u!114 &544338167370864602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4864,13 +4864,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7543242706001161829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149fa3ae453128b41940b5caa905f8ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handType: 3
-  proximityType: 3
-  constraintOnMovement: 0
-  useLocalSpaceForConstraint: 0
+  ShowTetherWhenManipulating: 0
+  IsBoundsHandles: 0
 --- !u!1 &8120751387363620285
 GameObject:
   m_ObjectHideFlags: 0
