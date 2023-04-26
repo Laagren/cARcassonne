@@ -9,6 +9,7 @@ namespace PunTabletop
         public GameObject Game;
         public GameObject HowToPlayButton;
         public GameObject Tutorial;
+        public GameObject PreviewObject;
 
         private bool isPunEnabled;
 
@@ -41,6 +42,7 @@ namespace PunTabletop
             gameObject.SetActive(false);
             HowToPlayButton.SetActive(false);
             Tutorial.SetActive(false);
+            PreviewObject.SetActive(false);
         }
 
 
