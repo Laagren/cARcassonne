@@ -5670,6 +5670,14 @@ PrefabInstance:
       propertyPath: HowToPlayButton
       value: 
       objectReference: {fileID: 4146445741279035172}
+    - target: {fileID: 2022872961, guid: fe07e4e4615af8c41b6a340281500012, type: 3}
+      propertyPath: HowToPlayObject
+      value: 
+      objectReference: {fileID: 2130759563458012176}
+    - target: {fileID: 2022872961, guid: fe07e4e4615af8c41b6a340281500012, type: 3}
+      propertyPath: IndicatorObject
+      value: 
+      objectReference: {fileID: 3183690234239692190}
     - target: {fileID: 2623676721051423046, guid: fe07e4e4615af8c41b6a340281500012,
         type: 3}
       propertyPath: bounds.x

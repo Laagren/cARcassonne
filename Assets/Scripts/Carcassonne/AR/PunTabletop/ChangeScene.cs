@@ -8,8 +8,9 @@ namespace PunTabletop
         public delegate void ChangeSceneDelegate();
         public GameObject Game;
         public GameObject HowToPlayButton;
-        public GameObject Tutorial;
+        public GameObject HowToPlayObject;
         public GameObject PreviewObject;
+        public GameObject IndicatorObject;
 
         private bool isPunEnabled;
 
@@ -41,8 +42,9 @@ namespace PunTabletop
             // Game.GetComponentInChildren<GameControllerScript>().startGame = true;
             gameObject.SetActive(false);
             HowToPlayButton.SetActive(false);
-            Tutorial.SetActive(false);
+            HowToPlayObject.SetActive(false);
             PreviewObject.SetActive(false);
+            IndicatorObject.SetActive(false);
         }
 
 
