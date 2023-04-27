@@ -4812,7 +4812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 1798396970713721370}
   manipulationType: 3
-  twoHandedManipulationType: 4
+  twoHandedManipulationType: 1
   allowFarManipulation: 1
   useForcesForNearManipulation: 0
   oneHandRotationModeNear: 1
@@ -4855,8 +4855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handType: 3
   proximityType: 3
-  scaleMinimum: 0.2
-  scaleMaximum: 2
+  scaleMinimum: 0
+  scaleMaximum: 0
   relativeToInitialState: 1
 --- !u!114 &8082874657359784936
 MonoBehaviour:
