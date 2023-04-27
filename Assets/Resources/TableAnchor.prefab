@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 8960748228227188823}
   - component: {fileID: 4993873808045326428}
   - component: {fileID: 2761488042368775239}
+  - component: {fileID: 1922282079298754372}
   m_Layer: 0
   m_Name: HowToPlayObject
   m_TagString: HowToPlay
@@ -759,7 +760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 1302393884334798665}
   manipulationType: 3
-  twoHandedManipulationType: -1
+  twoHandedManipulationType: 4
   allowFarManipulation: 1
   useForcesForNearManipulation: 0
   oneHandRotationModeNear: 1
@@ -817,7 +818,24 @@ MonoBehaviour:
   handType: 3
   proximityType: 3
   constraintOnRotation: 4
-  useLocalSpaceForConstraint: 1
+  useLocalSpaceForConstraint: 0
+--- !u!114 &1922282079298754372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130759563458012176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820f94d57893bf843a0cd6d93313fe6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 3
+  proximityType: 3
+  scaleMinimum: 0.2
+  scaleMaximum: 2
+  relativeToInitialState: 1
 --- !u!1 &2352422930020500794
 GameObject:
   m_ObjectHideFlags: 0
