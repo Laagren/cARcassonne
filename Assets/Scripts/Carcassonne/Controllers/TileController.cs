@@ -194,21 +194,34 @@ namespace Carcassonne.Controllers
                 var dir = side.Key; // The direction (up/down/left/right) to check
                 var geo = side.Value; // The geographic feature in that direction on the base tile
                 var neighbour = dir + cell;
-                
+
                 // Tracks whether there is at least one neighbour
                 // var neighbourIsInBounds = PositionIsInBounds(neighbour); // If neighbour is not in bounds, don't change hasNeighbour.
                 // if (!hasNeigbour && neighbourIsInBounds) hasNeigbour = tiles.Played[cell.x + dir.x, cell.y + dir.y] != null;
-                hasNeigbour ^= tiles.Placement.ContainsKey(neighbour);
+                //hasNeigbour ^= tiles.Placement.ContainsKey(neighbour); //There may be an error here, as some tiles are set as not having a neigbour when they do. It may also be a problem with the bit encoding.
+
+                //This may work.... not sure why though. And I have not tested enough.
+                if (tiles.Placement.ContainsKey(neighbour))
+                {
+                    hasNeigbour = true;
+                }
+
+                //Kevin Test. Force hasNeighbour = true. THIS FIXES THE PROBLEM BUT NOW TILES CAN BE PLACED OUTSIDE OTHER TILES.
+                //hasNeigbour = true;
 
                 // Check whether a direction is empty or matches the geography of the tile
                 if (!DirectionIsEmptyOrMatchesGeography(neighbour, -dir, geo))
                 {
+                    Debug.Log("(Kevin) Non-matching geography. Check other message.");
                     Debug.Log($"Invalid placement: Non-matching geography at {neighbour} in the direction {dir}. " +
                               $"Expected {geo}, got {tiles.Placement[neighbour].GetGeographyAt(dir)}.");
                     return false;
                 }
             }
+
+            Debug.Log("(Kevin) hasNeigbour: " + hasNeigbour);
             
+            // BUG --- hasNeigbour is false when in game it visually has neigbours!!!!!!
             // The sides are all empty or matches. Return whether there is a neighbour.
             if (!hasNeigbour)
             {
@@ -273,7 +286,7 @@ namespace Carcassonne.Controllers
         {
             if (!tiles.Placement.ContainsKey(cell))
             {
-                Debug.Log($"No tile at {cell}");
+                //Debug.Log($"No tile at {cell}");
                 return true;
             }
             

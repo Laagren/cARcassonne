@@ -93,7 +93,7 @@ namespace Carcassonne.AR.GamePieces
             var south2D = new Vector2(southCollider.transform.position.x, southCollider.transform.position.z);
 
             var angle = Vector2.SignedAngle(Vector2.right, north2D-south2D);
-            Debug.Log($"Angle between South ({south2D}, {southCollider.transform.position}) and North ({north2D}, {northCollider.transform.position}) {angle}");
+            //Debug.Log($"Angle between South ({south2D}, {southCollider.transform.position}) and North ({north2D}, {northCollider.transform.position}) {angle}");
             
             if(angle % 90 > 5 && angle % 90 < 85)
                 Debug.LogWarning($"The tile is not square to the board. The angle between the North and South colliders is {angle} and should be a multiple of 90.");
