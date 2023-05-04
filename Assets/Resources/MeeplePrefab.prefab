@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 8923673530127581048}
   - component: {fileID: 5155066686473171798}
   - component: {fileID: 8626014287640896588}
+  - component: {fileID: 8971770041411274074}
   m_Layer: 0
   m_Name: MeeplePrefab
   m_TagString: Meeple 0
@@ -346,6 +347,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 0}
+--- !u!65 &8971770041411274074
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470780459563121935}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.021790229, y: 0.03, z: 0.020833204}
+  m_Center: {x: 0.00024585053, y: -0.0004106909, z: -0.0009890273}
 --- !u!1 &3899854295671959710
 GameObject:
   m_ObjectHideFlags: 0
