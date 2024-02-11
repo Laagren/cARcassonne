@@ -743,7 +743,7 @@ PlayerSettings:
       InputInjectionBrokered: False
       PicturesLibrary: False
       RemovableStorage: False
-      WebCam: False
+      WebCam: True
       VoipCall: False
       GazeInput: True
       UserAccountInformation: False
