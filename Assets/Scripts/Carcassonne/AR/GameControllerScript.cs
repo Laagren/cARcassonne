@@ -266,6 +266,8 @@ namespace Carcassonne.AR
             startingTile.GetComponent<Rigidbody>().isKinematic = true;
             startingTile.GetComponent<GridKeyboardMovable>().enabled = false;
             startingTile.GetComponent<GridKeyboardRotatable>().enabled = false;
+
+
         }
         
         private List<Player> CreatePlayers()

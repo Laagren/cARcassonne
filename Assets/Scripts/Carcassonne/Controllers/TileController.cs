@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Carcassonne.Models;
 using Carcassonne.State;
 using Carcassonne.State.Features;
@@ -18,6 +20,12 @@ namespace Carcassonne.Controllers
         private GameController controller => GetComponent<GameController>(); //null?
         private TileState tiles => state.Tiles;
         private Tile tile => state.Tiles.Current;
+
+        public Tile FirstTile { get; private set; }
+
+
+        public delegate void TileDelegate(Vector2Int cell, Tile tile /*List<Vector2Int> neighbours*/);
+        public event TileDelegate ActivateCellEvent;
 
         public int getTileCount()
         {
@@ -101,19 +109,24 @@ namespace Carcassonne.Controllers
         {
             Debug.Assert(state != null, "TileController: The state is null.");
             
-            var t = state.Tiles.Remaining.Pop();
-            Debug.Log($"Starting tile: ({t.ID}) {t}");
+            FirstTile = state.Tiles.Remaining.Pop();
+            Debug.Log($"Starting tile: ({FirstTile.ID}) {FirstTile}");
+            
 
-            state.Tiles.Placement.Add(Vector2Int.zero, t);
+            //ActivateCellEvent?.Invoke(Vector2Int.zero, FirstTile /*, tile.Sides.Keys.ToList()*/);
 
-            var bg = BoardGraph.FromTile(t, Vector2Int.zero, state.grid);
+            state.Tiles.Placement.Add(Vector2Int.zero, FirstTile);
+
+            var bg = BoardGraph.FromTile(FirstTile, Vector2Int.zero, state.grid);
             Debug.Log($"Starting graph has {bg.VertexCount} vertices and {bg.EdgeCount} edges.");;
             bg.SetTurn(0);
             
             state.Features.Graph.Add(bg);
 
-            Debug.Log($"First tile graph: {BoardGraph.FromTile(t, Vector2Int.zero, state.grid)}");
+            Debug.Log($"First tile graph: {BoardGraph.FromTile(FirstTile, Vector2Int.zero, state.grid)}");
         }
+
+
 
         public override bool Place(Vector2Int cell)
         {
@@ -139,7 +152,11 @@ namespace Carcassonne.Controllers
 
             state.phase = Phase.TileDown;
             
-            OnPlace.Invoke(tile, cell);
+           OnPlace.Invoke(tile, cell);
+
+            // Activate tiles inside the players dictionary
+            ActivateCellEvent?.Invoke(cell, tile /*, tile.Sides.Keys.ToList()*/);
+
             return true;
         }
 

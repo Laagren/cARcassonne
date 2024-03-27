@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 8493484197605914132}
   - component: {fileID: 4211790740948910432}
   - component: {fileID: 8493484197605914134}
+  - component: {fileID: 3743395462657554169}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -134,6 +135,8 @@ MonoBehaviour:
   minZ: 0
   maxX: 0
   maxZ: 0
+  MaxScore: 250
+  Mode: 0
   nPlayers: 2
   state: {fileID: 8493484197605914130}
   aiPrefab: {fileID: 2598782832212889485, guid: c9686d6fa98efc2468f526b4b37003b2,
@@ -612,6 +615,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: {fileID: 8493484197605914130}
+  TurnLogged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8493484197605914134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,6 +632,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 8493484197605914130}
   log: {fileID: 4211790740948910432}
+--- !u!114 &3743395462657554169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8493484197605914143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8d5a8fda27717489ba1a2bfb0ed63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8493484199002616919
 GameObject:
   m_ObjectHideFlags: 0

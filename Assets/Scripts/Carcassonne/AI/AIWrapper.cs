@@ -161,6 +161,9 @@ namespace Carcassonne.AI
         public bool PlaceTile(Vector2Int cell)
         {
             // var cell = new Vector2Int(x, z);
+
+            // Räkna ut grannar och sätt till true
+            
             return tileController.Place(cell);
         }
         

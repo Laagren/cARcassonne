@@ -5512,6 +5512,11 @@ PrefabInstance:
       propertyPath: OnChangeCell.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 792235174189722097, guid: 5cea51629c3f54fa594f0f7ce4050181,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1060827976533155264, guid: 5cea51629c3f54fa594f0f7ce4050181,
         type: 3}
       propertyPath: m_Name
@@ -5520,7 +5525,7 @@ PrefabInstance:
     - target: {fileID: 1060827976533155264, guid: 5cea51629c3f54fa594f0f7ce4050181,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1060827976533155265, guid: 5cea51629c3f54fa594f0f7ce4050181,
         type: 3}
@@ -5577,10 +5582,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1594590657445931893, guid: 5cea51629c3f54fa594f0f7ce4050181,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969684736493608207, guid: 5cea51629c3f54fa594f0f7ce4050181,
+        type: 3}
+      propertyPath: m_TagString
+      value: TileGrid
+      objectReference: {fileID: 0}
     - target: {fileID: 2799253482183189400, guid: 5cea51629c3f54fa594f0f7ce4050181,
         type: 3}
       propertyPath: constraintsManager
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897542996467834282, guid: 5cea51629c3f54fa594f0f7ce4050181,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5264234482613408012, guid: 5cea51629c3f54fa594f0f7ce4050181,
         type: 3}
@@ -5646,6 +5666,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1607189030881651440}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6558608608181274584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798396970961904577}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8d5a8fda27717489ba1a2bfb0ed63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewObject: {fileID: 6875440408218431199, guid: 20cbdf9f4c70df14bb317bc0590918c3,
+    type: 3}
 --- !u!114 &1798396970961904583 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1060827977317108023, guid: 5cea51629c3f54fa594f0f7ce4050181,

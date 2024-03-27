@@ -122,11 +122,12 @@ public class AIGameController : MonoBehaviour, IGameControllerInterface
     /// </summary>
     public void NewGame()
     {
+        // List of Players
+        var players = CreatePlayers();  // Switched order on player and deck creation
+
         // List of Tiles
         var tiles = CreateDeck();
         
-        // List of Players
-        var players = CreatePlayers();
         
         // List of Meeples
         var meeples = CreateMeeples(players);

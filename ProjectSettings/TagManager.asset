@@ -10,6 +10,7 @@ TagManager:
   - Meeple 1
   - Meeple
   - HowToPlay
+  - TileGrid
   layers:
   - Default
   - TransparentFX
