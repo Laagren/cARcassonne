@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   set: 0
+  m_id: 0
 --- !u!114 &454705710031653374
 MonoBehaviour:
   m_ObjectHideFlags: 0

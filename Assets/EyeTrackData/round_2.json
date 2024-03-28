@@ -1,0 +1,11 @@
+{"CellPos":{"x":-1,"y":0},"GazeDuration":0.5651053190231323,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":0,"y":0},"GazeDuration":0.1316055953502655,"tileData":{"South":3,"North":4,"East":2,"West":2,"m_id":8,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":0,"y":-1},"GazeDuration":0.5086228847503662,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":0,"y":0},"GazeDuration":0.1316055953502655,"tileData":{"South":3,"North":4,"East":2,"West":2,"m_id":8,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":1,"y":0},"GazeDuration":0.08437361568212509,"tileData":{"South":2,"North":4,"East":4,"West":2,"m_id":16,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":1,"y":1},"GazeDuration":0.4849170744419098,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":0,"y":1},"GazeDuration":0.027451802045106889,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":0,"y":0},"GazeDuration":0.1316055953502655,"tileData":{"South":3,"North":4,"East":2,"West":2,"m_id":8,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":-1,"y":0},"GazeDuration":0.5651053190231323,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":0,"y":-1},"GazeDuration":0.5086228847503662,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":1,"y":-1},"GazeDuration":0.3681321442127228,"tileData":{"South":2,"North":2,"East":4,"West":2,"m_id":11,"m_rotations":1,"IsReady":false,"Shield":false,"set":0}}

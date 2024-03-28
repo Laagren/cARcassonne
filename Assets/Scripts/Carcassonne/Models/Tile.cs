@@ -11,6 +11,7 @@ namespace Carcassonne.Models
     ///     The tile class also contains static information about the base tile deck for the game as a whole, so that
     ///     the tiles can be instantiated in the game.
     /// </summary>
+
     public class Tile : MonoBehaviour
     {
         /// <summary>
@@ -33,7 +34,7 @@ namespace Carcassonne.Models
         /// </summary>
         public TileSet set = TileSet.Base;
 
-        private int m_id;
+        public int m_id;
 
         private int m_Rotations;
 
