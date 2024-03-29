@@ -1,1 +1,4 @@
-{"CellPos":{"x":1,"y":0},"GazeDuration":0.4640333354473114,"tileData":{"South":2,"North":4,"East":4,"West":2,"m_id":16,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":0,"y":-1},"GazeDuration":9.715675354003907,"TotalGazeTime":9.719645500183106,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0},"hasTile":false}
+{"CellPos":{"x":0,"y":0},"GazeDuration":0.1241639107465744,"TotalGazeTime":0.132436603307724,"tileData":{"South":3,"North":4,"East":2,"West":2,"m_id":8,"m_rotations":0,"IsReady":false,"Shield":false,"set":0},"hasTile":true}
+{"CellPos":{"x":0,"y":-1},"GazeDuration":9.715675354003907,"TotalGazeTime":9.719645500183106,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0},"hasTile":false}
+{"CellPos":{"x":1,"y":0},"GazeDuration":0.8176116347312927,"TotalGazeTime":0.8224714398384094,"tileData":{"South":2,"North":4,"East":3,"West":2,"m_id":9,"m_rotations":0,"IsReady":false,"Shield":false,"set":0},"hasTile":true}
