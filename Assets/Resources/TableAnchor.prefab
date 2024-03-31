@@ -5681,6 +5681,7 @@ MonoBehaviour:
   viewObject: {fileID: 6875440408218431199, guid: 20cbdf9f4c70df14bb317bc0590918c3,
     type: 3}
   suggestObject: {fileID: 0}
+  minGazeTime: 0.5
 --- !u!114 &1798396970961904583 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1060827977317108023, guid: 5cea51629c3f54fa594f0f7ce4050181,

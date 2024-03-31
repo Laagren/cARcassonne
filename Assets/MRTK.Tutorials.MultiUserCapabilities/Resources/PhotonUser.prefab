@@ -329,6 +329,7 @@ MonoBehaviour:
     type: 3}
   suggestObject: {fileID: 6875440408218431199, guid: 279f96841641b1746a2abd4638e2df1e,
     type: 3}
+  minGazeTime: 0.5
 --- !u!1 &6218267280101589944
 GameObject:
   m_ObjectHideFlags: 0

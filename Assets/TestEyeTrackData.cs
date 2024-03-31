@@ -85,6 +85,9 @@ public class TestEyeTrackData : MonoBehaviour
     private int roundID = 1;
     private int playerID;
     private float roundTimer;
+    private Vector2Int prevMostViewed;
+    private bool prevWasInvalid;
+    private Vector2Int suggestedCellPos;
 
 
     void Start()
@@ -95,8 +98,9 @@ public class TestEyeTrackData : MonoBehaviour
         prevCell = currentCell;  
         viewObject = Instantiate(viewObject, Vector3.zero, Quaternion.identity, grid.transform);
         suggestObject = Instantiate(suggestObject, Vector3.zero, Quaternion.identity, grid.transform);
+        prevMostViewed = new Vector2Int(100, 100);
 
-        for(int i = (gridSize * -1); i <= gridSize; i++) {
+        for (int i = (gridSize * -1); i <= gridSize; i++) {
             for(int j = (gridSize * -1); j <= gridSize; j++) {
                 Vector2Int pos = new Vector2Int(i, j);
                 gridCells.Add(pos, new Cell(pos));                   
@@ -169,9 +173,20 @@ public class TestEyeTrackData : MonoBehaviour
         // 1 - Check if most viewed cell is valid for current tile
         // 2 - if valid, do nothing and break
         // 3 - if invalid, highlight possible options, start over from step 1
-
+        roundTimer = 0;
         Cell mostViewed = PredictPlacement();
-        if (!PredictedCellIsValid(mostViewed))
+        if (mostViewed.CellPos == prevMostViewed) 
+        {
+            if (prevWasInvalid)
+            {
+                // Highlight
+                suggestObject.gameObject.SetActive(true);
+                suggestObject.transform.position = grid.GetCellCenterWorld(new Vector3Int(suggestedCellPos.x, suggestedCellPos.y, 0));
+                
+            }
+        }
+        
+        else if (!PredictedCellIsValid(mostViewed))
         { 
             // Loop over all? possible empty cells
             // Check if valid
@@ -185,54 +200,22 @@ public class TestEyeTrackData : MonoBehaviour
                 {
                     if (PredictedCellIsValid(cell.Value))
                     {
-                        // TODO: Highlight
+                        // Highlight
+                        suggestObject.gameObject.SetActive(true);
                         suggestObject.transform.position = grid.GetCellCenterWorld(new Vector3Int(cell.Value.CellPos.x, cell.Value.CellPos.y, 0));
-                        roundTimer = 0;
+                        
+                        suggestedCellPos = cell.Value.CellPos;
+                        prevWasInvalid = true;
                         break;
                     }
                 }
             }
         }
+        prevMostViewed = mostViewed.CellPos;
+        // Reset GazeTimers
+        ResetCellGazeData();
     }
 
-    //public override bool CanBePlaced()
-    //{
-    //    // Log the cells that have been visited
-    //    HashSet<Vector2Int> visitedTiles = new HashSet<Vector2Int>();
-
-    //    // Check the cells adjacent to each placed tile
-    //    foreach (var kvp in state.Tiles.Placement)
-    //    {
-    //        var c = kvp.Key;
-    //        var t = kvp.Value;
-    //        foreach (var side in Tile.Directions) // Every neighbouring cell to a placed tile
-    //        {
-    //            var neighbour = c + side;
-    //            if (!visitedTiles.Contains(neighbour))
-    //            {
-    //                for (var rotation = 0; rotation < 4; rotation++)
-    //                {
-    //                    if (IsPlacementValid(neighbour))
-    //                    {
-    //                        Debug.Log($"Found a valid position at ({neighbour.x},{neighbour.y}) with rotation {rotation}.");
-
-    //                        // Randomly rotate tile to not bias positioning
-    //                        // tile.Rotate(Random.Range(0,4));
-    //                        tile.RotateTo(0); //TODO Switch this once there is a way of syncing. 
-
-    //                        return true;
-    //                    }
-
-    //                    tile.Rotate();
-    //                }
-    //                visitedTiles.Add(neighbour);
-    //            }
-    //        }
-    //    }
-
-    //    Debug.LogWarning($"Tile ID {tile.ID} cannot be placed.");
-    //    return false;
-    //}
 
 
     void RegisterRound()
@@ -247,9 +230,13 @@ public class TestEyeTrackData : MonoBehaviour
             File.AppendAllText(path, str + "\n");
         }
 
+        // Clear total gaze time from cellGrids.
+        ResetCellGazeData();
+
         cellViewOrderList.Clear(); // Should it clear after every round?
-        // TODO: clear total gaze time from cellGrids.
+        
         roundTimer = 0;
+        prevMostViewed = new Vector2Int(100, 100);
     }
 
     TileData ParseTileData(Tile tile)
@@ -320,6 +307,28 @@ public class TestEyeTrackData : MonoBehaviour
         }     
     }
 
+    private void ResetCellGazeData()
+    {
+        foreach (var cell in gridCells)
+        {
+            cell.Value.GazeDuration = 0;
+            cell.Value.TotalGazeTime = 0;
+        }
+    }
+
+    private IEnumerator FaceTransparency()
+    {
+        UnityEngine.Color materialOpacity = suggestObject.GetComponent<Material>().color;
+
+        for (float opacity = 1; opacity >= 0; opacity-=1f)
+        {
+            materialOpacity.a = opacity;
+            suggestObject.GetComponent<Material>().color = materialOpacity;
+            //yield return null;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+    }
 
     private void Update()
     {
@@ -328,6 +337,9 @@ public class TestEyeTrackData : MonoBehaviour
         roundTimer += Time.deltaTime;
         if (roundTimer > 10)
             Algoritm();
+
+        if (roundTimer > 5)
+            suggestObject.gameObject.SetActive(false);
 
         #region legacy
         //Debug.Log(CoreServices.InputSystem.EyeGazeProvider.HitPosition);
