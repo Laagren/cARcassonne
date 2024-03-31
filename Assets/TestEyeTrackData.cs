@@ -70,6 +70,7 @@ public class TestEyeTrackData : MonoBehaviour
 {
     [SerializeField] private  GameObject viewObject;
     [SerializeField] private GameObject suggestObject;
+    [SerializeField] private float minGazeTime = 0.5f;
 
     private Dictionary<Vector2Int, Cell> gridCells = new Dictionary<Vector2Int, Cell>();
     private List<Cell> cellViewOrderList = new List<Cell>();
@@ -82,6 +83,7 @@ public class TestEyeTrackData : MonoBehaviour
     private Vector2Int currentCell = Vector2Int.zero;
     private Vector2Int prevCell;
     private int roundID = 1;
+    private int playerID;
     private float roundTimer;
 
 
@@ -89,6 +91,7 @@ public class TestEyeTrackData : MonoBehaviour
     {
         grid = GameObject.FindWithTag("TileGrid").GetComponent<UnityEngine.Grid>();
         gameController = GameObject.Find("GameController");
+        playerID = GetComponent<Player>().id;
         prevCell = currentCell;  
         viewObject = Instantiate(viewObject, Vector3.zero, Quaternion.identity, grid.transform);
         suggestObject = Instantiate(suggestObject, Vector3.zero, Quaternion.identity, grid.transform);
@@ -303,19 +306,16 @@ public class TestEyeTrackData : MonoBehaviour
         }
            
             
-        
-
         // Switched gaze to another cell
-        if (currentCell != prevCell && gridCells[currentCell].ShouldTrackTime){
+        if (currentCell != prevCell && gridCells[currentCell].ShouldTrackTime
+            && gridCells[currentCell].GazeDuration > minGazeTime)
+        {
             viewObject.transform.position = grid.GetCellCenterWorld(new Vector3Int(currentCell.x, currentCell.y, 0));
             Debug.Log("Previous cell was: " + prevCell.ToString() + ", current gaze time was: " + gridCells[prevCell].GazeDuration);
 
-
-            // TODO: add min time required before adding to viewList
             prevCell = currentCell;
             cellViewOrderList.Add(gridCells[prevCell]);
             uniqueCellsViewed.Add(prevCell, prevCell);
-
             gridCells[prevCell].GazeDuration = 0;       
         }     
     }
