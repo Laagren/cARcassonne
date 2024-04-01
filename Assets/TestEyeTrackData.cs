@@ -302,7 +302,10 @@ public class TestEyeTrackData : MonoBehaviour
 
             prevCell = currentCell;
             cellViewOrderList.Add(gridCells[prevCell]);
-            uniqueCellsViewed.Add(prevCell, prevCell);
+            if (!uniqueCellsViewed.ContainsKey(prevCell)) 
+            {
+                uniqueCellsViewed.Add(prevCell, prevCell);
+            }
             gridCells[prevCell].GazeDuration = 0;       
         }     
     }
