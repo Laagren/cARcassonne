@@ -9,3 +9,4 @@
 {"CellPos":{"x":-1,"y":0},"GazeDuration":0.5651053190231323,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
 {"CellPos":{"x":0,"y":-1},"GazeDuration":0.5086228847503662,"tileData":{"South":0,"North":0,"East":0,"West":0,"m_id":0,"m_rotations":0,"IsReady":false,"Shield":false,"set":0}}
 {"CellPos":{"x":1,"y":-1},"GazeDuration":0.3681321442127228,"tileData":{"South":2,"North":2,"East":4,"West":2,"m_id":11,"m_rotations":1,"IsReady":false,"Shield":false,"set":0}}
+{"CellPos":{"x":1,"y":0},"GazeDuration":0.2631252110004425,"TotalGazeTime":0.7652721405029297,"tileData":{"South":3,"North":3,"East":2,"West":2,"m_id":3,"m_rotations":0,"IsReady":false,"Shield":false,"set":0},"hasTile":true}
