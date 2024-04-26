@@ -33,9 +33,9 @@ public class Cell
     [System.NonSerialized]
     public bool ShouldTrackTime;
 
-    public Cell(Vector2Int cellPos)
+    public Cell(/*Vector2Int cellPos*/)
     {
-        CellPos = cellPos; 
+        //CellPos = cellPos; 
         GazeDuration = 0;
         ShouldTrackTime = false;
         //CanPlaceMeeple = false;
@@ -103,7 +103,8 @@ public class TestEyeTrackData : MonoBehaviour
         for (int i = (gridSize * -1); i <= gridSize; i++) {
             for(int j = (gridSize * -1); j <= gridSize; j++) {
                 Vector2Int pos = new Vector2Int(i, j);
-                gridCells.Add(pos, new Cell(pos));                   
+                Cell cell = new Cell { CellPos = pos };
+                gridCells.Add(pos, cell);                   
             }
         }
 
@@ -144,8 +145,7 @@ public class TestEyeTrackData : MonoBehaviour
             Cell neighbourCell = gridCells[neighbour];
 
             if (neighbourCell.tileData != null)
-            {
-               
+            {          
                 for (var rotation = 0; rotation < 4; rotation++)
                 {
                     // Check if tile placement with current rotation is valid
@@ -280,34 +280,56 @@ public class TestEyeTrackData : MonoBehaviour
         // Get gaze point and transform it into coordinates on the grid.
         Vector3 hitPoint = CoreServices.InputSystem.EyeGazeProvider.HitPosition;
         Vector3Int local3DPos = grid.WorldToCell(hitPoint);
+        prevCell = currentCell;
         currentCell = new Vector2Int(local3DPos.x, local3DPos.y);
 
         // If looking at cell outside board, abort.
-        if (!gridCells.ContainsKey(currentCell))
+        if (!gridCells.ContainsKey(currentCell) || !gridCells[currentCell].ShouldTrackTime){
+            viewObject.transform.position = Vector3.zero;
             return;
-
-        // Check if currentCell is active and should update time 
-        if (gridCells[currentCell].ShouldTrackTime){
-            gridCells[currentCell].GazeDuration += Time.deltaTime;
-            gridCells[currentCell].TotalGazeTime += Time.deltaTime;
         }
-           
-            
+          
+
+
         // Switched gaze to another cell
-        if (currentCell != prevCell && gridCells[currentCell].ShouldTrackTime
-            && gridCells[currentCell].GazeDuration > minGazeTime)
+        if (currentCell != prevCell)
         {
             viewObject.transform.position = grid.GetCellCenterWorld(new Vector3Int(currentCell.x, currentCell.y, 0));
-            Debug.Log("Previous cell was: " + prevCell.ToString() + ", current gaze time was: " + gridCells[prevCell].GazeDuration);
-
-            prevCell = currentCell;
-            cellViewOrderList.Add(gridCells[prevCell]);
-            if (!uniqueCellsViewed.ContainsKey(prevCell)) 
+            if (gridCells[prevCell].GazeDuration >= minGazeTime)
             {
-                uniqueCellsViewed.Add(prevCell, prevCell);
+                Cell temp = new Cell
+                {
+                    CellPos = gridCells[prevCell].CellPos,
+                    GazeDuration = gridCells[prevCell].GazeDuration,
+                    TotalGazeTime = gridCells[prevCell].TotalGazeTime,
+                    tileData = gridCells[prevCell].tileData,
+                    hasTile = gridCells[prevCell].hasTile,
+                    ShouldTrackTime = gridCells[prevCell].ShouldTrackTime
+                };
+
+                Debug.Log("Previous cell was: " + temp.ToString() + ", current gaze time was: " + temp.GazeDuration);
+
+                //prevCell = currentCell;
+                cellViewOrderList.Add(temp);
+                if (!uniqueCellsViewed.ContainsKey(prevCell))
+                {
+                    uniqueCellsViewed.Add(prevCell, prevCell);
+                }
+                gridCells[prevCell].GazeDuration = 0;
             }
-            gridCells[prevCell].GazeDuration = 0;       
-        }     
+            else
+            {
+                gridCells[prevCell].GazeDuration = 0;
+                Debug.Log("Looked at new cell. Did not look at prev cel for enough time. Reset gaze duration. PREV: " + prevCell + ", CURRENT: " + currentCell);
+                //prevCell = currentCell;
+            }
+        }
+
+        // Check if currentCell is active and should update time 
+        //if (gridCells[currentCell].ShouldTrackTime){
+        gridCells[currentCell].GazeDuration += Time.deltaTime;
+        gridCells[currentCell].TotalGazeTime += Time.deltaTime;
+        //}
     }
 
     private void ResetCellGazeData()
