@@ -329,7 +329,16 @@ MonoBehaviour:
     type: 3}
   suggestObject: {fileID: 6875440408218431199, guid: 279f96841641b1746a2abd4638e2df1e,
     type: 3}
-  minGazeTime: 0.5
+  minGazeTime: 0.05
+  minAlgorithmTime: 15
+  suggestionUpTime: 5
+  showTrackedCell: 0
+  currentCell: {x: 0, y: 0}
+  prevMostViewed: {x: 0, y: 0}
+  prevCell: {x: 0, y: 0}
+  mostViewPos: {x: 0, y: 0}
+  viewOrderListCount: 0
+  roundTimer: 0
 --- !u!1 &6218267280101589944
 GameObject:
   m_ObjectHideFlags: 0

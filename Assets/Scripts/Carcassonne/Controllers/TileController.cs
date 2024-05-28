@@ -27,6 +27,7 @@ namespace Carcassonne.Controllers
         public delegate void TileDelegate(Vector2Int cell, Tile tile /*List<Vector2Int> neighbours*/);
         public event TileDelegate ActivateCellEvent;
 
+
         public int getTileCount()
         {
             return state.Tiles.Remaining.Count;
